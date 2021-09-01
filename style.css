@@ -32,26 +32,31 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 25px;
-  width: 60%;
+  width: 95%;
+  max-width: 820px;
   margin: auto;
   height: 27rem;
-  border-radius: 10px;
+  max-height: 432px;
+  border-radius: 15px;
   overflow: hidden;
   background: url("./images/bg-pattern-desktop.svg");
   background-repeat: no-repeat;
-  background-position: top -14rem right 28rem;
+  background-position: top -16rem right 30rem;
   background-size: cover;
   background-color: white;
+  box-shadow: 5px 5px 10px -2px var(--very-dark-grayish-blue),
+    -5px -5px 10px -2px var(--very-dark-grayish-blue);
 }
 .box {
-  width: 10%;
+  width: 35%;
+  max-width: 136px;
   position: absolute;
-  top: 275px;
-  left: 207px;
   z-index: 1;
+  transform: translate(-65px, 185px);
 }
 .main-img {
   width: 100%;
+  max-width: 397px;
   position: relative;
   top: 60px;
   right: 71px;
@@ -82,12 +87,63 @@ hr {
   color: var(--dark-gray-blue);
 }
 .answer {
-  display: none;
+  height: 0;
+  overflow: hidden;
+}
+.answer p {
   padding: 10px 0 0 0;
   width: 85%;
   color: var(--dark-gray-blue);
   font-size: 11px;
 }
 .active {
-  display: block;
+  height: auto;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    display: block;
+    width: 330px;
+    min-width: 330px;
+    max-width: 330x;
+    height: 500px;
+    max-height: 550px;
+    overflow: inherit;
+    margin: 20px auto;
+    background: url("./images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 250px;
+    background-color: white;
+  }
+  .image-wrapper {
+    height: 140px;
+  }
+  .box {
+    width: 95px;
+    max-width: 95px;
+    min-width: 95px;
+    transform: translate(35px, -40px);
+  }
+  .main-img {
+    width: 80%;
+    min-width: 240px;
+    max-width: 240px;
+    top: -110px;
+    right: -45px;
+  }
+  .faq-wrapper {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+  }
+  hr {
+    width: 100%;
+  }
+  .faq {
+    text-align: left;
+  }
+  .question img {
+    justify-self: right;
+  }
 }
