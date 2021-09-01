@@ -34,7 +34,7 @@ main {
   grid-column-gap: 25px;
   width: 95%;
   max-width: 820px;
-  margin: auto;
+  margin: 20px auto;
   height: 27rem;
   max-height: 432px;
   border-radius: 15px;
@@ -81,14 +81,16 @@ hr {
   grid-template-columns: 4fr 1fr;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .question p {
   font-weight: 400;
   color: var(--dark-gray-blue);
 }
 .answer {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height 1s ease-out;
 }
 .answer p {
   padding: 10px 0 0 0;
@@ -96,20 +98,20 @@ hr {
   color: var(--dark-gray-blue);
   font-size: 11px;
 }
-.active {
-  height: auto;
+.answer.active {
+  max-height: 100px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 375px) {
   main {
     display: block;
     width: 330px;
     min-width: 330px;
-    max-width: 330x;
-    height: 500px;
-    max-height: 550px;
+    /* max-width: 330x; */
+    height: auto;
+    max-height: 750px;
     overflow: inherit;
-    margin: 20px auto;
+    margin: 100px auto 10px auto;
     background: url("./images/bg-pattern-mobile.svg");
     background-repeat: no-repeat;
     background-position: top center;
@@ -135,7 +137,7 @@ hr {
   .faq-wrapper {
     text-align: center;
     width: 90%;
-    margin: auto;
+    margin: auto auto 15% auto;
   }
   hr {
     width: 100%;
