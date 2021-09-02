@@ -98,16 +98,15 @@ hr {
   color: var(--dark-gray-blue);
   font-size: 11px;
 }
-.answer.active {
-  max-height: 100px;
+.question.active + .answer {
+  max-height: 500px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
   main {
     display: block;
     width: 330px;
     min-width: 330px;
-    /* max-width: 330x; */
     height: auto;
     max-height: 750px;
     overflow: inherit;
